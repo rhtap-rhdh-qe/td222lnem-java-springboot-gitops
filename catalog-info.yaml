@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: td222lnem-java-springboot-gitops
+  description: This is GitOps manifest for td222lnem-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=td222lnem-java-springboot
+    backstage.io/kubernetes-id: td222lnem-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: td222lnem-java-springboot
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:td222lnem-java-springboot
